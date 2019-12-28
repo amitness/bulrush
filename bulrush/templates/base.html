@@ -9,6 +9,10 @@
   {% assets output="css/main.%(version)s.css", "css/main.css" %}
     <link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">
   {% endassets %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.css" integrity="sha384-9tPv11A+glH/on/wEu99NVwDPwkMQESOocs/ZGXPoIiLE8MU/qkqUcZ3zzL+6DuH" crossorigin="anonymous">
+	<style>
+		.katex { font-size: 1.4em !important; }
+	</style>
   <style media="print">.is-hidden-print{display:none !important}</style>
   {% for extra_path in EXTRA_PATH_METADATA.values() %}
     {% if extra_path.get('path', '').endswith('.css') %}
@@ -20,13 +24,13 @@
 </head>
 
 <body id="index" class="home">
-<header class="hero is-primary">
+<header class="hero is-success">
   <div class="hero-head">
     <div class="container">
       <nav class="navbar">
         <div class="navbar-brand">
           <a class="navbar-item title is-3{% if output_file == "index.html" %} is-active{% endif %}"
-             href="{{ SITEURL }}/">{{ SITENAME }}</a>
+             href="{{ SITEURL }}/">{{ NAVBAR_LABEL }}</a>
         </div>
       </nav>
     </div>
@@ -66,10 +70,10 @@
 
     <div class="column is-one-quarter-desktop is-one-third-tablet is-hidden-print">
       <aside class="menu">
-        {% if MAILCHIMP %}
+        {% if True %}
           {%  include 'mailchimp.html' %}
         {% endif %}
-        {% if pages and DISPLAY_PAGES_ON_MENU %}
+        {% if pages and DISPLAY_PAGES_ON_MENU and page %}
           <p class="menu-label">Other Pages</p>
           <ul class="menu-list">
             {% if DISPLAY_PAGES_ON_MENU %}
@@ -112,9 +116,6 @@
     <div class="credits">
       <span><a href="https://github.com/textbook/bulrush">Bulrush</a> theme for
         <a href="https://blog.getpelican.com/">Pelican</a></span>
-      <span><span class="icon is-small"><i class="fa fa-html5"></i></span> HTML 5</span>
-      <span><span class="icon is-small"><i class="fa fa-css3"></i></span> CSS 3</span>
-      <span>Made with <a href="https://bulma.io">Bulma</a></span>
     </div>
   </div>
   {% include 'github.html' %}

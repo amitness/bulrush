@@ -1,9 +1,9 @@
 <div id="mc_embed_signup">
   <form
-      action="https://{{ MAILCHIMP.domain }}/subscribe/post?u={{ MAILCHIMP.user_id }}&amp;id={{ MAILCHIMP.list_id }}"
+      action="https://feedburner.google.com/fb/a/mailverify"
       method="post" id="mc-embedded-subscribe-form"
-      name="mc-embedded-subscribe-form" class="validate" target="_blank"
-      novalidate>
+      name="mc-embedded-subscribe-form" class="validate" target="popupwindow"
+      onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=amitness', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
 
     <h2 class="menu-label">Mailing List</h2>
 
@@ -13,8 +13,10 @@
         <div class="field-body">
           <div class="field">
             <p class="control has-icons-left">
-              <input type="email" name="EMAIL" class="input required email is-small"
-                     id="mce-EMAIL" placeholder="Email address">
+              <input type="text" name="email" class="input required email is-small"
+                     id="mce-EMAIL" placeholder="Email address"/>
+              <input type="hidden" value="amitness" name="uri"/>
+              <input type="hidden" name="loc" value="en_US"/>
               <span class="icon is-small is-left">
               <i class="fa fa-envelope"></i>
             </span>
@@ -35,56 +37,16 @@
                      id="mce-LNAME" placeholder="Last">
             </p>
           </div>
-        </div>
+      </div>
       </div>
       <div class="field is-grouped">
         <p class="control">
           <input type="submit" name="subscribe" value="Subscribe"
                  class="button is-small is-success" id="mc-embedded-subscribe">
+            <p>
         </p>
-        {% if MAILCHIMP.rewards_url %}
-          <p class="control">
-            <span class="help">
-              Powered by
-              <a href="{{ MAILCHIMP.rewards_url }}"
-                 title="MailChimp - email marketing made easy and fun">
-                MailChimp
-              </a>
-            </span>
-          </p>
-        {% endif %}
       </div>
 
-      <div id="mce-responses" class="clear">
-        <div class="response help is-danger" id="mce-error-response"
-             style="display:none"></div>
-        <div class="response help is-success" id="mce-success-response"
-             style="display:none"></div>
-      </div>
-
-      <div style="position: absolute; left: -5000px;" aria-hidden="true">
-        <input type="text" name="b_{{ MAILCHIMP.user_id }}_{{ MAILCHIMP.list_id }}"
-               tabindex="-1" value="">
-      </div>
     </div>
   </form>
 </div>
-
-{% if MAILCHIMP.validation %}
-  <script type='text/javascript'
-          src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'>
-  </script>
-  <script type='text/javascript'>
-    (function ($) {
-      window.fnames = new Array();
-      window.ftypes = new Array();
-      fnames[0] = 'EMAIL';
-      ftypes[0] = 'email';
-      fnames[1] = 'FNAME';
-      ftypes[1] = 'text';
-      fnames[2] = 'LNAME';
-      ftypes[2] = 'text';
-    }(jQuery));
-    var $mcj = jQuery.noConflict(true);
-  </script>
-{% endif %}
