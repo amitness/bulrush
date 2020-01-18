@@ -1,9 +1,28 @@
 @grey: #f5f5f5;
 @dark-grey: #4a4a4a;
 @darker-grey: #363636;
-@primary: #23d160;
+@primary: #4caf50;
 
 @import "highlight";
+
+
+
+// Custom
+.is-success {
+    background-color: @primary !important;
+    color: #fff
+}
+
+.hero.is-success {
+    background-color: @primary;
+    color: #fff
+}
+
+a.navbar-item.is-active, .hero.is-success a.navbar-item:hover {
+    background-color: #43A047 !important;
+    color: #fff;
+}
+
 
 article .section {
   p, ul, ol, li {

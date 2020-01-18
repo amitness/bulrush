@@ -172,6 +172,19 @@
 .highlight .il {
   color: #2aa198;
 }
+.is-success {
+  background-color: #4caf50 !important;
+  color: #fff;
+}
+.hero.is-success {
+  background-color: #4caf50;
+  color: #fff;
+}
+a.navbar-item.is-active,
+.hero.is-success a.navbar-item:hover {
+  background-color: #43A047 !important;
+  color: #fff;
+}
 article .section p,
 article .section ul,
 article .section ol,
@@ -266,7 +279,7 @@ footer.footer .github-fork-ribbon-wrapper {
   width: 150px;
 }
 footer.footer .github-fork-ribbon-wrapper .github-fork-ribbon {
-  background-color: #23d160;
+  background-color: #4caf50;
   padding: 1px 0;
   pointer-events: auto;
   position: absolute;
@@ -290,14 +303,14 @@ footer.footer .github-fork-ribbon-wrapper .github-fork-ribbon:hover {
 }
 footer.footer .github-fork-ribbon-wrapper .github-fork-ribbon:hover a {
   background-color: #f5f5f5;
-  border-color: #23d160;
-  color: #23d160;
+  border-color: #4caf50;
+  color: #4caf50;
 }
 .card.is-fullheight {
   height: 100%;
 }
 .card-content a h3 {
-  color: #23d160;
+  color: #4caf50;
 }
 .card-content a p {
   color: #4a4a4a;
