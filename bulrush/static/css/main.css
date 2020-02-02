@@ -185,6 +185,9 @@ a.navbar-item.is-active,
   background-color: #43A047 !important;
   color: #fff;
 }
+.article-title {
+  color: #363636 !important;
+}
 article .section p,
 article .section ul,
 article .section ol,
