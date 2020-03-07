@@ -6,6 +6,7 @@
 {% with images=(item.content | images) %}
   {% if images %}
     <meta property="og:image" content="{{ images[0] }}">
+    <meta property="twitter:image" content="{{ images[0] }}">
   {% elif AVATAR %}
     <meta property="og:image" content="{{ SITEURL }}/images/{{ AVATAR }}">
   {% endif %}
