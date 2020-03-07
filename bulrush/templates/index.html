@@ -1,5 +1,12 @@
 {% extends "base.html" %}
 {% block content_title %}{% endblock %}
+{% if INDEX_DESCRIPTION %}
+{% block metadescription %}
+<meta name="description" content="{{ INDEX_DESCRIPTION }}">
+{% endblock %}
+
+
+{% endif %}
 {% block content %}
   {% if articles and not articles_page.has_previous() and False %}
     {% with article = articles[0] %}
