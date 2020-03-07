@@ -3,6 +3,7 @@
 {% if article.summary %}
   {% block metadescription %}
   <meta name="description" content="{{ article.summary | striptags | truncate(200, end='...') }}">
+  <meta name="author" content="{{ SITE_AUTHOR }}">
   {% endblock %}
 {% endif %}
 {% block tags %}
