@@ -6,7 +6,6 @@
 {% with images=(item.content | images) %}
   {% if images %}
     <meta property="og:image" content="{{ images[0] }}">
-    <meta property="twitter:image" content="{{ images[0] }}">
   {% elif AVATAR %}
     <meta property="og:image" content="{{ SITEURL }}/images/{{ AVATAR }}">
   {% endif %}
@@ -19,6 +18,11 @@
   <meta name="twitter:creator" content="@{{ TWITTER_USERNAME }}">
   <meta name="twitter:site" content="@{{ TWITTER_USERNAME }}">
 {% endif %}
+{% with images=(item.content | images) %}
+  {% if images %}
+    <meta property="twitter:image" content="{{ SITEURL }}{{ images[0] }}">
+  {% endif %}
+{% endwith %}
 <meta property="og:site_name" content="{{ SITENAME }}">
 <meta property="og:type" content="article">
 {% if item.date %}
