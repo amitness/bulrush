@@ -16,6 +16,11 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.css" integrity="sha384-9tPv11A+glH/on/wEu99NVwDPwkMQESOocs/ZGXPoIiLE8MU/qkqUcZ3zzL+6DuH" crossorigin="anonymous">
 	<style>
 		.katex { font-size: 1.4em !important; }
+
+        /* Allow horizontal scrolling on latex formulas */
+        .katex-display {
+            overflow-x: auto;
+        }
 	</style>
   <style media="print">.is-hidden-print{display:none !important}</style>
   {% for extra_path in EXTRA_PATH_METADATA.values() %}
