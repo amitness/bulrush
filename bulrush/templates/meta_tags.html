@@ -5,10 +5,14 @@
 <meta property="og:url" content="{{ SITEURL }}/{{ item.url }}">
 {% with images=(item.content | images) %}
   {% if images %}
-    {% if images[0].startswith('/') %}
-    <meta property="og:image" content="{{ SITEURL }}{{ images[0] }}">
+    {%  if item.cover %}
+        <meta property="og:image" content="{{ SITEURL }}{{ item.cover }}">
     {% else %}
-    <meta property="og:image" content="{{ images[0] }}">
+        {% if images[0].startswith('/') %}
+        <meta property="og:image" content="{{ SITEURL }}{{ images[0] }}">
+        {% else %}
+        <meta property="og:image" content="{{ images[0] }}">
+        {% endif %}
     {% endif %}
   {% elif AVATAR %}
     <meta property="og:image" content="{{ SITEURL }}/images/{{ AVATAR }}">
@@ -24,11 +28,15 @@
 {% endif %}
 {% with images=(item.content | images) %}
   {% if images %}
-    {% if images[0].startswith('/') %}
-    <meta property="twitter:image" content="{{ SITEURL }}{{ images[0] }}">
-    {% else %}
-    <meta property="twitter:image" content="{{ images[0] }}">
-    {% endif %}
+       {% if item.cover %}
+            <meta property="twitter:image" content="{{ SITEURL }}{{ item.cover }}">
+        {% else %}
+           {% if images[0].startswith('/') %}
+            <meta property="twitter:image" content="{{ SITEURL }}{{ images[0] }}">
+            {% else %}
+            <meta property="twitter:image" content="{{ images[0] }}">
+            {% endif %}
+       {% endif %}
   {% endif %}
 {% endwith %}
 <meta property="og:site_name" content="{{ SITENAME }}">
