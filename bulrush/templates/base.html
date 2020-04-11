@@ -17,10 +17,14 @@
 	<style>
 		.katex { font-size: 1.4em !important; }
 
-        /* Allow horizontal scrolling on latex formulas */
-        .katex-display {
+        /* Allow horizontal scrolling on latex formulas on touch screens*/
+        @media screen and (max-width: 1023px) {
+          .katex-display {
             overflow-x: auto;
+          }
         }
+
+
 	</style>
   <style media="print">.is-hidden-print{display:none !important}</style>
   {% for extra_path in EXTRA_PATH_METADATA.values() %}
