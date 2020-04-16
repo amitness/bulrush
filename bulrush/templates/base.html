@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width">
   <meta name="google-site-verification" content="xETphZ5K1WItiUzH0YMRgZ8njDZlQMcGd_HD3zxGkuI" />
   <meta name="p:domain_verify" content="907458af45983f47cfdffa284ee6ec03"/>
+    {% if article %}
+        <link rel="canonical" href="{{ SITEURL }}/{{ article.url }}"/>
+    {% endif%}
+
   <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
   {%block metadescription%}{%endblock%}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
