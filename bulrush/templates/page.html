@@ -1,5 +1,11 @@
 {% extends "base.html" %}
 {% block title %}{{ page.title|striptags }}{% endblock %}
+{% if page.summary %}
+  {% block metadescription %}
+  <meta name="description" content="{{ page.summary | striptags | truncate(200, end='...') }}">
+  <meta name="author" content="{{ SITE_AUTHOR }}">
+  {% endblock %}
+{% endif %}
 {% block tags %}
   {% with item=page %}
     {% include 'meta_tags.html' %}

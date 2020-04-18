@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 {% block title %}Archive - {{ SITENAME }}{% endblock %}
+{% block metadescription %}
+  <meta name="description" content="An archive of articles visualizing various Machine Learning concepts with diagrams and intuitions.">
+  <meta name="author" content="{{ SITE_AUTHOR }}">
+{% endblock %}
 {% block content %}
-  <h1 class="subtitle">
+  <h1 class="title">
     Archive
   </h1>
 
